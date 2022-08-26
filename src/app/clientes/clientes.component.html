@@ -1,0 +1,45 @@
+<form class="d-flex width" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" [(ngModel)]="query" (keyup)="getClientes()">
+    <button class="btn btn-outline-success" type="submit" (click)="getClientes()">Search</button>
+  </form>
+<div class="container">
+    <form action="" class="form" *ngIf="crudOperation.isVisible">
+        <input type="text" placeholder="Cedula" name="cedula" class="input" [(ngModel)]="currentClient.cedula">
+        <input type="text" placeholder="nombre" name="nombre" class="input" [(ngModel)]="currentClient.nombre">
+        <input type="text" placeholder="Apellidos" name="apellidos" class="input" [(ngModel)]="currentClient.apellidos">
+        <input type="date" placeholder="Fecha Nacimiento" name="fecha_nac" class="input" [(ngModel)]="currentClient.fecha_nac">
+        <button class="input button btn btn-success" (click)="setCliente()" (submit)="setCliente()">Guardar</button>
+        <button class="input button btn btn-danger" (click)="crudOperation.isVisible = false">Cancelar</button>
+    </form>
+
+    <table class="table tabla">
+        <thead>
+          <tr>
+            <th scope="col">Cedula</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <th scope="row">{{cliente.cedula}}</th>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.apellidos}}</td>
+            <td>{{cliente.fecha_nac}}</td>
+            <td>
+                <div *ngIf="!confirm" class="botones">
+                    <button class="btn btn-danger" (click)="confirm = true"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-warning" (click)="edit(cliente)"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div *ngIf="confirm" class="botones">
+                    <button class="btn btn-success" (click)="delete(cliente.id)"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn btn-danger" (click)="confirm = false"><i class="fa-solid fa-ban"></i></button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+        <button class="btn btn-primary" (click)="new()">Nuevo</button>
+      </table>
+</div>
