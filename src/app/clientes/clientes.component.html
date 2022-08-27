@@ -5,7 +5,7 @@
 <div class="container">
     <form action="" class="form" *ngIf="crudOperation.isVisible">
         <input type="text" placeholder="Cedula" name="cedula" class="input" [(ngModel)]="currentClient.cedula">
-        <input type="text" placeholder="nombre" name="nombre" class="input" [(ngModel)]="currentClient.nombre">
+        <input type="text" placeholder="Nombre" name="nombre" class="input" [(ngModel)]="currentClient.nombre">
         <input type="text" placeholder="Apellidos" name="apellidos" class="input" [(ngModel)]="currentClient.apellidos">
         <input type="date" placeholder="Fecha Nacimiento" name="fecha_nac" class="input" [(ngModel)]="currentClient.fecha_nac">
         <button class="input button btn btn-success" (click)="setCliente()" (submit)="setCliente()">Guardar</button>
