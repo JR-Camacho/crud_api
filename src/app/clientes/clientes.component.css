@@ -2,6 +2,7 @@
     width: 100%;
     margin-top: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -38,8 +39,115 @@
     justify-content: space-between;
 }
 
-.width{
+.form_look{
     width: 30%;
+    min-width: 300px;
     margin: 20px;
     margin-left: auto;
 }
+
+.btn_new{
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1225px) {
+    .container{
+        flex-direction: column;
+    }
+
+    .form{
+        margin-bottom: 30px;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form{
+        font-size: 0.8rem;
+    }
+
+    .tabla{
+        font-size: 0.7rem;
+    }
+
+    .action{
+        font-size: 1rem;
+    }
+
+    .btn_new{
+        width: 70px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .form{
+        font-size: 0.7rem;
+    }
+
+    .tabla{
+        font-size: 0.6rem;
+    }
+
+    .botones{
+        width: 80px;
+    }
+
+    .action_b{
+        font-size: 0.9rem;
+    }
+
+    .action{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .form_look{
+        margin: auto;
+        margin-top: 30px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form{
+        font-size: 0.7rem;
+    }
+
+    .tabla{
+        font-size: 0.5rem;
+    }
+
+    .action_b{
+        font-size: 0.7rem;
+    }
+
+    .action{
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 355px) {
+    .tabla{
+        font-size: 0.4rem;
+    }
+
+    .botones{
+        width: 55px;
+    }
+
+    .action_b{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .action{
+        font-size: 0.5rem;
+    }
+}
+
